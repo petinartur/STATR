@@ -2,8 +2,7 @@ package ru.stqa.pft.statr.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -12,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * Created by artur.petin on 27.09.2016.
  */
 public class ApplicationManager {
-    /*
+
     // Firefox Driver
 
     FirefoxDriver wd;
@@ -37,34 +36,34 @@ public class ApplicationManager {
         login("selenium", "selenium");
 
     }
-*/
-//  CHROME DRIVER
- ChromeDriver wd;
- GenerateData genData;
+    /*
+    //  CHROME DRIVER
+     ChromeDriver wd;
+     GenerateData genData;
 
-    public static boolean isAlertPresent(ChromeDriver wd) {
-        try {
-            wd.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
+        public static boolean isAlertPresent(ChromeDriver wd) {
+            try {
+                wd.switchTo().alert();
+                return true;
+            } catch (NoAlertPresentException e) {
+                return false;
+            }
         }
-    }
 
-    public void init() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
-        wd = new ChromeDriver(options);
-        genData=new GenerateData();
-   //     wd = new ChromeDriver();
-        wd.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
-        wd.manage().timeouts().setScriptTimeout(500, TimeUnit.SECONDS);
-        wd.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
-        wd.get("http://192.168.50.45");
-        login("selenium", "selenium");
+        public void init() {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("start-maximized");
+            wd = new ChromeDriver(options);
+            genData=new GenerateData();
+       //     wd = new ChromeDriver();
+            wd.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
+            wd.manage().timeouts().setScriptTimeout(500, TimeUnit.SECONDS);
+            wd.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+            wd.get("http://192.168.50.45");
+            login("selenium", "selenium");
 
-    }
-
+        }
+    */
     private void login(String username, String password) {
         wd.findElement(By.id("login-username")).click();
         wd.findElement(By.id("login-username")).clear();
@@ -522,7 +521,7 @@ public class ApplicationManager {
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
     public void editReference() {
-        wd.findElement(By.xpath("//*[@id=\"main_list\"]/ul/li[9]/a")).click();
+        wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[6]/li[9]/a")).click();
         wd.findElement(By.xpath("//div[.='test']")).click();
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[2]")).click();
         wd.findElement(By.xpath("//*[@id=\"dictcat_CODE\"]/input")).sendKeys(genData.generateRandomString(5));
@@ -530,13 +529,13 @@ public class ApplicationManager {
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
     public void deleteReference() {
-        wd.findElement(By.xpath("//*[@id=\"main_list\"]/ul/li[9]/a")).click();
+        wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[6]/li[9]/a")).click();
         wd.findElement(By.xpath("//div[.='test']")).click();
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[3]")).click();
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
     public void goToZnachReference() {
-        wd.findElement(By.xpath("//*[@id=\"main_list\"]/ul/li[9]/a")).click();
+        wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[6]/li[9]/a")).click();
         wd.findElement(By.xpath("//div[.='test']")).click();
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[4]")).click();
     }
@@ -620,7 +619,7 @@ public class ApplicationManager {
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
     public void editGenDocument(){
-        wd.findElement(By.xpath("//*[@id=\"main_list\"]/ul/li[11]/a")).click();
+        wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[6]/li[11]/a")).click();
         wd.findElement(By.xpath("//div[.='autotest']")).click();
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[2]")).click();
         wd.findElement(By.xpath("//*[@id=\"anoperator\"]/textarea")).clear();
@@ -628,9 +627,8 @@ public class ApplicationManager {
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
     public void deleteGenDocument() {
-        wd.findElement(By.xpath("//*[@id=\"main_list\"]/ul/li[11]/a")).click();
+        wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[6]/li[11]/a")).click();
         wd.findElement(By.xpath("//div[.='autotest']")).click();
-        wd.findElement(By.xpath("//*[@id=\"main_list\"]/ul/li[11]/a")).click();
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[3]")).click();
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
