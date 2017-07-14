@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
  * Created by artur.petin on 27.09.2016.
  */
 public class ApplicationManager {
+/*
 
     // Firefox Driver
 
@@ -36,8 +37,9 @@ public class ApplicationManager {
         login("selenium", "selenium");
 
     }
-    /*
-    //  CHROME DRIVER
+    */
+
+        //  CHROME DRIVER
      ChromeDriver wd;
      GenerateData genData;
 
@@ -51,6 +53,7 @@ public class ApplicationManager {
         }
 
         public void init() {
+        	System.setProperty("webdriver.chrome.driver", "/Users/artur/Desktop/buildAgent/chromedriver");
             ChromeOptions options = new ChromeOptions();
             options.addArguments("start-maximized");
             wd = new ChromeDriver(options);
@@ -63,7 +66,7 @@ public class ApplicationManager {
             login("selenium", "selenium");
 
         }
-    */
+    
     private void login(String username, String password) {
         wd.findElement(By.id("login-username")).click();
         wd.findElement(By.id("login-username")).clear();
