@@ -2,7 +2,8 @@ package ru.stqa.pft.statr.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -11,62 +12,62 @@ import java.util.concurrent.TimeUnit;
  * Created by artur.petin on 27.09.2016.
  */
 public class ApplicationManager {
-/*
+    /*
+      // Firefox Driver
 
-    // Firefox Driver
+      FirefoxDriver wd;
+      GenerateData genData;
 
-    FirefoxDriver wd;
-    GenerateData genData;
+      public static boolean isAlertPresent(FirefoxDriver wd) {
+          try {
+              wd.switchTo().alert();
+              return true;
+          } catch (NoAlertPresentException e) {
+              return false;
+          }
+      }
 
-    public static boolean isAlertPresent(FirefoxDriver wd) {
-        try {
-            wd.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
+      public void init() {
+          wd = new FirefoxDriver();
+          genData=new GenerateData();
+          wd.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+          wd.manage().timeouts().setScriptTimeout(50, TimeUnit.SECONDS);
+          wd.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+          wd.get("http://192.168.50.45");
+          login("selenium", "selenium");
 
-    public void init() {
-        wd = new FirefoxDriver();
-        genData=new GenerateData();
-        wd.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-        wd.manage().timeouts().setScriptTimeout(50, TimeUnit.SECONDS);
-        wd.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-        wd.get("http://192.168.50.45");
-        login("selenium", "selenium");
-
-    }
+      }
     */
+      //  CHROME DRIVER
 
-        //  CHROME DRIVER
-     ChromeDriver wd;
-     GenerateData genData;
+       ChromeDriver wd;
+       GenerateData genData;
 
-        public static boolean isAlertPresent(ChromeDriver wd) {
-            try {
-                wd.switchTo().alert();
-                return true;
-            } catch (NoAlertPresentException e) {
-                return false;
-            }
-        }
+          public static boolean isAlertPresent(ChromeDriver wd) {
+              try {
+                  wd.switchTo().alert();
+                  return true;
+              } catch (NoAlertPresentException e) {
+                  return false;
+              }
+          }
 
-        public void init() {
-        	System.setProperty("webdriver.chrome.driver", "/Users/artur/Desktop/buildAgent/chromedriver");
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("start-maximized");
-            wd = new ChromeDriver(options);
-            genData=new GenerateData();
-       //     wd = new ChromeDriver();
-            wd.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
-            wd.manage().timeouts().setScriptTimeout(500, TimeUnit.SECONDS);
-            wd.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
-            wd.get("http://192.168.50.45");
-            login("selenium", "selenium");
+          public void init() {
+              System.setProperty("webdriver.chrome.driver", "/Users/artur/Desktop/buildAgent/chromedriver");
+              ChromeOptions options = new ChromeOptions();
+              options.addArguments("start-maximized");
+              wd = new ChromeDriver(options);
+              genData=new GenerateData();
+         //     wd = new ChromeDriver();
 
-        }
-    
+              wd.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
+              wd.manage().timeouts().setScriptTimeout(500, TimeUnit.SECONDS);
+              wd.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+              wd.get("http://192.168.50.45");
+              login("selenium", "selenium");
+
+          }
+
     private void login(String username, String password) {
         wd.findElement(By.id("login-username")).click();
         wd.findElement(By.id("login-username")).clear();
