@@ -55,7 +55,8 @@ public class ApplicationManager {
           public void init() {
               System.setProperty("webdriver.chrome.driver", "/Users/artur/Desktop/buildAgent/chromedriver");
               ChromeOptions options = new ChromeOptions();
-              options.addArguments("start-maximized");
+              options.addArguments("start-fullscreen");
+//              options.addArguments("start-maximized");
               wd = new ChromeDriver(options);
               genData=new GenerateData();
          //     wd = new ChromeDriver();
