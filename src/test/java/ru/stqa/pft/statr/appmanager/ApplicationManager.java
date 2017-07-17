@@ -59,6 +59,13 @@ public class ApplicationManager {
 //              options.addArguments("start-maximized");
               wd = new ChromeDriver(options);
               genData=new GenerateData();
+              //     wd = new ChromeDriver();
+
+
+//              ChromeOptions options = new ChromeOptions();
+ //             options.addArguments("start-maximized");
+ //             wd = new ChromeDriver(options);
+ //             genData=new GenerateData();
          //     wd = new ChromeDriver();
 
               wd.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
@@ -638,3 +645,4 @@ public class ApplicationManager {
   public void stop() {
         wd.quit();
     }
+}
