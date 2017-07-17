@@ -10,7 +10,6 @@ public class editForm extends TestBase {
     @Test
     public void testeditForm() {
         app.goToFormPage();
-        app.editForm();
 
 
     }

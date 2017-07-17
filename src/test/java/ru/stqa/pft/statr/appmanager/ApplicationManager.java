@@ -526,18 +526,17 @@ public class ApplicationManager {
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
     public void editReference() {
-        wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[6]/li[9]/a")).click();
-        wd.findElement(By.xpath("//div[.='test']")).click();
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[2]")).click();
         wd.findElement(By.xpath("//*[@id=\"dictcat_CODE\"]/input")).sendKeys(genData.generateRandomString(5));
         wd.findElement(By.xpath("//*[@id=\"adesc\"]/textarea")).sendKeys(genData.generateRandomString(10));
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
     public void deleteReference() {
-        wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[6]/li[9]/a")).click();
-        wd.findElement(By.xpath("//div[.='test']")).click();
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[3]")).click();
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
+    }
+    public void backToReference() {
+        wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[1]")).click();
     }
     public void goToZnachReference() {
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[6]/li[9]/a")).click();
@@ -555,7 +554,6 @@ public class ApplicationManager {
         wd.findElement(By.xpath("//div[.='test']")).click();
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[3]")).click();
         wd.findElement(By.xpath("//*[@id=\"dictval_CODE\"]/input")).sendKeys(genData.generateRandomString(8));
-        wd.findElement(By.xpath("//*[@id=\"aname\"]/input")).sendKeys("test");
         wd.findElement(By.xpath("//*[@id=\"adesc\"]/input")).sendKeys(genData.generateRandomString(10));
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
 
@@ -584,36 +582,37 @@ public class ApplicationManager {
     }
     public void createForm() {
         wd.findElement(By.xpath("/html/body/div[3]/div[2]/div[2]/div/div/div[1]/div/button[1]")).click();
-        wd.findElement(By.xpath("/html/body/div[1]/div/div/div/div[2]/div[1]/div/div/li[1]/input")).sendKeys("test");
+        wd.findElement(By.xpath("/html/body/div[1]/div/div/div/div[2]/div[1]/div/div/li[1]/input")).sendKeys("autotest");
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div/div[2]/div[1]/div/div/li[2]/input")).sendKeys(genData.generateRandomString(5));
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div/div[2]/div[1]/div/div/li[3]/input")).sendKeys(genData.generateRandomString(5));
         wd.findElement(By.xpath("//*[@id=\"fromdt\"]/div/span/button/i")).click();
         wd.findElement(By.xpath("//*[@id=\"fromdt\"]/div/div/ul/li[2]/span/button[1]")).click();
         wd.findElement(By.xpath("//*[@id=\"todt\"]/div/span/button")).click();
-        wd.findElement(By.xpath("//*[@id=\"stat_PERIOD\"]/select")).click();
-        if (!wd.findElement(By.xpath("option[value='number:26624']")).isSelected()) {
-            wd.findElement(By.cssSelector("option[value='number:26624']")).click();
-        }
         wd.findElement(By.xpath("//*[@id=\"dates\"]/div/input")).click();
-        wd.findElement(By.xpath("//*[@id=\"1492091729091-0-uiGrid-00NM-cell\"]/div")).click();
-        wd.findElement(By.xpath("//*[@id=\"1492091729091-0-uiGrid-00NM-cell\"]/div")).click();
-        wd.findElement(By.xpath("//*[@id=\"1492091729091-0-uiGrid-00NM-cell\"]/form/givc-grid-period/select[2]")).click();
-        if (!wd.findElement(By.xpath("option[value='number:1999']")).isSelected()) {
-            wd.findElement(By.cssSelector("option[value='number:1999']")).click();
-        }
-        wd.findElement(By.xpath("//*[@id=\"1492091729091-0-uiGrid-00NM-cell\"]/form/givc-grid-period/i[1]")).click();
-        wd.findElement(By.xpath("//*[@id=\"1492091729091-0-uiGrid-00NN-cell\"]/div")).click();
-        wd.findElement(By.xpath("//*[@id=\"1492091729091-0-uiGrid-00NN-cell\"]/div")).click();
-        wd.findElement(By.xpath("//*[@id=\"1492091729091-0-uiGrid-00NN-cell\"]/form/givc-grid-period/select[2]")).click();
-        wd.findElement(By.cssSelector("option[value='number:2000']")).click();
-        wd.findElement(By.xpath("//*[@id=\"1492091729091-0-uiGrid-00NN-cell\"]/form/givc-grid-period/i[1]")).click();
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div/div[3]/button[2]")).click();
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div/div[3]/div/button")).click();
+
     }
     public void editForm() {
-        wd.findElement(By.xpath("//div[.='test']")).click();
-
+        wd.findElement(By.xpath("(//input[@type='text'])[4]")).sendKeys("autotest");
+        wd.findElement(By.xpath("//div[.='autotest']")).click();
         wd.findElement(By.xpath("/html/body/div[3]/div[2]/div[2]/div/div/div[1]/div/button[2]")).click();
+        wd.findElement(By.xpath("/html/body/div[1]/div/div/div/div[2]/div[1]/div/div/li[2]/input")).sendKeys(genData.generateRandomString(5));
+        wd.findElement(By.xpath("/html/body/div[1]/div/div/div/div[2]/div[1]/div/div/li[3]/input")).sendKeys(genData.generateRandomString(5));
+        wd.findElement(By.xpath("//*[@id=\"fromdt\"]/div/span/button/i")).click();
+        wd.findElement(By.xpath("//*[@id=\"fromdt\"]/div/div/ul/li[2]/span/button[1]")).click();
+        wd.findElement(By.xpath("//*[@id=\"todt\"]/div/span/button")).click();
+        wd.findElement(By.xpath("//*[@id=\"dates\"]/div/input")).click();
+        wd.findElement(By.xpath("/html/body/div[1]/div/div/div/div[3]/button[2]")).click();
+        wd.findElement(By.xpath("/html/body/div[1]/div/div/div/div[3]/div/button")).click();
+
+    }
+    public void deleteForm() {
+//        wd.findElement(By.xpath("(//input[@type='text'])[4]")).sendKeys("autotest");
+//        wd.findElement(By.xpath("//div[.='autotest']")).click();
+
+        wd.findElement(By.xpath("/html/body/div[3]/div[2]/div[2]/div/div/div[1]/div/button[3]/i")).click();
+        wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
     public void createGenDocument() {
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[1]")).click();
@@ -632,8 +631,6 @@ public class ApplicationManager {
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
     public void deleteGenDocument() {
-        wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[6]/li[11]/a")).click();
-        wd.findElement(By.xpath("//div[.='autotest']")).click();
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[3]")).click();
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
@@ -641,4 +638,3 @@ public class ApplicationManager {
   public void stop() {
         wd.quit();
     }
-}
