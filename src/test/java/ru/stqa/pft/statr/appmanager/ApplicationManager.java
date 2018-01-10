@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import static org.testng.Assert.assertTrue;
+
 /**
  * Created by artur.petin on 27.09.2016.
  */
@@ -52,27 +54,35 @@ public class ApplicationManager {
               }
           }
 
-          public void init() {
-              System.setProperty("webdriver.chrome.driver", "/Users/artur/Desktop/buildAgent/chromedriver");
+          public void init() throws InterruptedException {
+/*              System.setProperty("webdriver.chrome.driver", "/Users/artur/Desktop/buildAgent/chromedriver");
               ChromeOptions options = new ChromeOptions();
               options.addArguments("start-fullscreen");
 //              options.addArguments("start-maximized");
               wd = new ChromeDriver(options);
               genData=new GenerateData();
               //     wd = new ChromeDriver();
+*/
 
-
-//              ChromeOptions options = new ChromeOptions();
- //             options.addArguments("start-maximized");
- //             wd = new ChromeDriver(options);
- //             genData=new GenerateData();
+                ChromeOptions options = new ChromeOptions();
+                 options.addArguments("start-maximized");
+                wd = new ChromeDriver(options);
+                 genData=new GenerateData();
          //     wd = new ChromeDriver();
 
-              wd.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
-              wd.manage().timeouts().setScriptTimeout(500, TimeUnit.SECONDS);
-              wd.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
-              wd.get("http://192.168.50.45");
-              login("selenium", "selenium");
+              wd.manage().timeouts().pageLoadTimeout(2000, TimeUnit.SECONDS);
+              wd.manage().timeouts().setScriptTimeout(5000, TimeUnit.SECONDS);
+              wd.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
+              wd.get("http://stat5066.mkstat.ru/");
+              //    wd.get("http://192.168.50.45");
+         //     Thread.sleep(10000);
+              login("admin", "master");
+              wd.manage().timeouts().pageLoadTimeout(2000, TimeUnit.SECONDS);
+              wd.manage().timeouts().setScriptTimeout(5000, TimeUnit.SECONDS);
+              wd.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
+
+
+              //       login("selenium", "selenium");
 
           }
 
@@ -95,7 +105,8 @@ public class ApplicationManager {
         wd.findElement(By.cssSelector("li.ng-scope:nth-child(7) > a:nth-child(1)")).click();
     }
     public void vereficryCurrentSituatuin(){
-        wd.findElement(By.xpath("//givc-stat-grid-status")).getText();
+
+        assertTrue(wd.findElement(By.xpath("/html/body/div[3]/div[2]/div[2]/div/div[1]/div/h3")).getText().contains("Новости"));
     }
     public void goToDictionaryKOPUK() {
         wd.findElement(By.cssSelector("div.accordion:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > ul:nth-child(1) > li:nth-child(6) > a:nth-child(1)")).click();
@@ -200,9 +211,9 @@ public class ApplicationManager {
         wd.findElement(By.xpath("//div[@class='buttons-row']//button[normalize-space(.)='Поиск']")).click();
         wd.findElement(By.xpath("//div[2]/div/div/div/div/div[4]/div")).click();
         wd.findElement(By.xpath("//div[2]/div/button")).click();
-        wd.findElement(By.cssSelector("#StatEditor > div.close-modal > button")).click();
+        wd.findElement(By.xpath("//*[@id=\"StatEditor\"]/div[2]/div[2]/div[1]/button")).click();
         wd.findElement(By.xpath("//div[2]/div/button[2]")).click();
-        wd.findElement(By.cssSelector("button.btn.btn-warning")).click();
+        wd.findElement(By.cssSelector("#StatEditor > div.modal-header > div.row.modal-body > div:nth-child(1) > button.btn.btn-warning")).click();
 
 
     }
@@ -335,20 +346,28 @@ public class ApplicationManager {
 
     }
     public void proverka244() {
-        if (!wd.findElement(By.cssSelector("option[value='number:2016']")).isSelected()) {
-            wd.findElement(By.cssSelector("option[value='number:2016']")).click();
+        if (!wd.findElement(By.cssSelector("option[value='number:2017']")).isSelected()) {
+            wd.findElement(By.cssSelector("option[value='number:2017']")).click();
         }
         //
-        if (!wd.findElement(By.cssSelector("option[value='number:102']")).isSelected()) {
-            wd.findElement(By.cssSelector("option[value='number:102']")).click();
+        if (!wd.findElement(By.cssSelector("option[value='number:123']")).isSelected()) {
+            wd.findElement(By.cssSelector("option[value='number:123']")).click();
         }
         wd.findElement(By.xpath("//div[@class='buttons-row']//button[normalize-space(.)='Поиск']")).click();
         wd.findElement(By.xpath("//div[2]/div/div/div/div/div[4]/div")).click();
-        wd.findElement(By.xpath("//div[2]/div/button")).click();
-        wd.findElement(By.cssSelector("#StatEditor > div.close-modal > button")).click();
-        wd.findElement(By.xpath("//div[2]/div/button[2]")).click();
-        wd.findElement(By.cssSelector("button.btn.btn-warning")).click();
+   //     wd.findElement(By.xpath("//div[2]/div/button")).click();
+    //    wd.findElement(By.cssSelector("#StatEditor > div.close-modal > button")).click();
+        wd.findElement(By.xpath("/html/body/div[3]/div[2]/div[2]/div/div[1]/div[2]/div/button[2]")).click();
 
+
+    }
+    public void proverka2441() {
+        wd.findElement(By.xpath("//*[@id=\"StatEditor\"]/div[2]/div[2]/div[2]/button[2]")).click();
+        assertTrue(wd.findElement(By.xpath("//*[@id=\"StatEditor\"]/div[3]/div/div[1]/div/uib-accordion[1]/div/div")).getText().contains("Раздел 1"));
+
+        wd.findElement(By.xpath("//*[@id=\"StatEditor\"]/div[2]/div[2]/div[1]/button[2]")).click();
+
+        wd.findElement(By.cssSelector("button.btn.btn-warning")).click();
     }
     public void proverka245() {
         if (!wd.findElement(By.cssSelector("option[value='number:2016']")).isSelected()) {
@@ -494,14 +513,13 @@ public class ApplicationManager {
         wd.findElement(By.cssSelector("#email > input")).clear();
         wd.findElement(By.cssSelector("#email > input")).sendKeys(genData.generateEmail(30));
         wd.findElement(By.cssSelector("#phone > input")).clear();
-        wd.findElement(By.cssSelector("#phone > input")).sendKeys(genData.generateRandomNumber(12));
+        wd.findElement(By.cssSelector("#phone > input")).sendKeys("8(495)" + genData.generateRandomNumber(8));
         wd.findElement(By.cssSelector("#position > input")).clear();
         wd.findElement(By.cssSelector("#position > input")).sendKeys("password234234");
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
 
     }
     public void deleteusers() {
-        wd.findElement(By.xpath("//div[.='autotest']")).click();
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[4]")).click();
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
@@ -558,7 +576,6 @@ public class ApplicationManager {
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
     public void editZnachReference() {
-        wd.findElement(By.xpath("//div[.='test']")).click();
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[3]")).click();
         wd.findElement(By.xpath("//*[@id=\"dictval_CODE\"]/input")).sendKeys(genData.generateRandomString(8));
         wd.findElement(By.xpath("//*[@id=\"adesc\"]/input")).sendKeys(genData.generateRandomString(10));
@@ -566,7 +583,6 @@ public class ApplicationManager {
 
     }
     public void deleteZnachReference() {
-        wd.findElement(By.xpath("//div[.='test']")).click();
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[4]")).click();
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
@@ -609,8 +625,8 @@ public class ApplicationManager {
         wd.findElement(By.xpath("//*[@id=\"fromdt\"]/div/span/button/i")).click();
         wd.findElement(By.xpath("//*[@id=\"fromdt\"]/div/div/ul/li[2]/span/button[1]")).click();
         wd.findElement(By.xpath("//*[@id=\"todt\"]/div/span/button")).click();
-        wd.findElement(By.xpath("//*[@id=\"dates\"]/div/input")).click();
-        wd.findElement(By.xpath("/html/body/div[1]/div/div/div/div[3]/button[2]")).click();
+//        wd.findElement(By.xpath("//*[@id=\"dates\"]/div/input")).click();
+//        wd.findElement(By.xpath("/html/body/div[1]/div/div/div/div[3]/button[2]")).click();
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div/div[3]/div/button")).click();
 
     }
@@ -641,8 +657,35 @@ public class ApplicationManager {
         wd.findElement(By.xpath("//*[@id=\"main_list\"]/div[2]/div/button[3]")).click();
         wd.findElement(By.xpath("/html/body/div[1]/div/div/div[3]/button[2]")).click();
     }
+    public void filtrsStatistic() {
+        wd.findElement(By.xpath("/html/body/div[3]/div[2]/div[2]/div/div[1]/group-filter-stat-data/div[3]/div/button[1]")).click();
+        wd.findElement(By.xpath("//div[@class='ui-grid-contents-wrapper']/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/div[2]/div/div/input")).sendKeys("(064) Форма");
+        wd.findElement(By.xpath("//div[@class='ui-grid-contents-wrapper']/div[2]/div[1]/div/div/div/div/div/div[3]/div[2]/div[2]/div/div/input")).sendKeys("Калин");
+        wd.findElement(By.xpath("//div[@class='ui-grid-contents-wrapper']/div[2]/div[1]/div/div/div/div/div/div[5]/div[2]/div[2]/div/div/input")).sendKeys("Тестовое");
+    }
+    public void goToGenReports() {
+        wd.findElement(By.linkText("Генератор отчетов")).click();
 
+    }
+    public void genReports() {
+  //      String windowHandler = wd.getWindowHandle();
+        wd.switchTo().window((String) wd.getWindowHandles().toArray()[1]);
+        wd.findElement(By.id("name")).clear();
+        wd.findElement(By.id("name")).sendKeys("011-1");
+        wd.findElement(By.cssSelector("div.btn-toolbar > div.btn-group > button.btn.btn-default")).click();
+        wd.findElement(By.cssSelector("#example > tbody > tr > td:nth-child(7) > button > span")).click();
+        wd.switchTo().window((String) wd.getWindowHandles().toArray()[2]);
+        wd.findElement(By.cssSelector("body > div.form-horizontal > div.form-group.note > div > textarea")).sendKeys("autotest");
+        wd.findElement(By.cssSelector("body > div.form-horizontal > div:nth-child(7) > div > button")).click();
+    }
+    public void stopGenReports() {
+        wd.findElement(By.xpath("")).click();
+    }
+    public void deleteGenReports() {
+        wd.findElement(By.xpath("//*[@id=\"example\"]/tbody/tr[1]/td[10]/button")).click();
+    }
   public void stop() {
+
         wd.quit();
     }
 }

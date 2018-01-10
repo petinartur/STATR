@@ -6,13 +6,11 @@ import ru.stqa.pft.statr.tests.TestBase;
 /**
  * Created by artur.petin on 27.03.2017.
  */
-public class TestSeventeen extends TestBase {
+public class TestDannue extends TestBase {
     @Test
-    public void testStatistics() throws InterruptedException {
+    public void testDannue() throws InterruptedException {
         app.goToStatistics();
-        Thread.sleep(10000);
-        app.proverka260();
-        app.chistca();
-
+    //    Thread.sleep(10000);
+   //     app.filtrsStatistic();
     }
 }

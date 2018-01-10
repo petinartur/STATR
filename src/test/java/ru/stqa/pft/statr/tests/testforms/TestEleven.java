@@ -12,6 +12,8 @@ public class TestEleven extends TestBase {
         app.goToStatistics();
         Thread.sleep(10000);
         app.proverka244();
+        Thread.sleep(10000);
+        app.proverka2441();
         app.chistca();
 
     }
