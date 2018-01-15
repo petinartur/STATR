@@ -57,5 +57,6 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.6" level="project" />
     <orderEntry type="library" name="Maven: net.java.dev.jna:jna:4.1.0" level="project" />
     <orderEntry type="library" name="Maven: net.java.dev.jna:jna-platform:4.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.qameta.allure:allure-testng:2.5.0" level="project" />
   </component>
 </module>

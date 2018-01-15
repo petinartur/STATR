@@ -3,211 +3,188 @@
 <suite verbose="0" name="Failed suite [Command line suite]">
   <test name="Command line test(failed)">
     <classes>
-      <class name="ru.stqa.pft.statr.tests.testforms.TestSixteen">
+      <class name="ru.stqa.pft.statr.tests.Form.TestForms">
         <methods>
+          <include name="setUp"/>
+          <include name="testOpen"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- ru.stqa.pft.statr.tests.Form.TestForms -->
+      <class name="ru.stqa.pft.statr.tests.testforms.TestFour">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
           <include name="testStatistics"/>
         </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestSixteen -->
-      <class name="ru.stqa.pft.statr.tests.testforms.TestTwo">
-        <methods>
-          <include name="testStatistics"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestTwo -->
-      <class name="ru.stqa.pft.statr.tests.Reference.znachReference.TestZnachRaference">
-        <methods>
-          <include name="testReference"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.Reference.znachReference.TestZnachRaference -->
+      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestFour -->
       <class name="ru.stqa.pft.statr.tests.Reference.TestReference">
         <methods>
+          <include name="setUp"/>
           <include name="testReference"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- ru.stqa.pft.statr.tests.Reference.TestReference -->
+      <class name="ru.stqa.pft.statr.tests.testforms.TestEleven">
+        <methods>
+          <include name="testStatistics"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestEleven -->
+      <class name="ru.stqa.pft.statr.tests.testforms.TestSeven">
+        <methods>
+          <include name="setUp"/>
+          <include name="testStatistics"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestSeven -->
       <class name="ru.stqa.pft.statr.tests.GenDocument.TestGenDocument">
         <methods>
+          <include name="setUp"/>
           <include name="testGenDocument"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- ru.stqa.pft.statr.tests.GenDocument.TestGenDocument -->
-      <class name="ru.stqa.pft.statr.tests.usergroup.TestUserGroup">
+      <class name="ru.stqa.pft.statr.tests.GenReports.TestGenReports">
         <methods>
-          <include name="testUserGroup"/>
+          <include name="setUp"/>
+          <include name="testGenReports"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.usergroup.TestUserGroup -->
-      <class name="ru.stqa.pft.statr.tests.testforms.TestTen">
+      </class> <!-- ru.stqa.pft.statr.tests.GenReports.TestGenReports -->
+      <class name="ru.stqa.pft.statr.tests.testforms.TestNine">
         <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
           <include name="testStatistics"/>
         </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestTen -->
+      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestNine -->
+      <class name="ru.stqa.pft.statr.tests.testforms.TestFourteen">
+        <methods>
+          <include name="setUp"/>
+          <include name="testStatistics"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestFourteen -->
       <class name="ru.stqa.pft.statr.tests.testforms.TestThirteen">
         <methods>
+          <include name="setUp"/>
           <include name="testStatistics"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- ru.stqa.pft.statr.tests.testforms.TestThirteen -->
-      <class name="ru.stqa.pft.statr.tests.status.TestEditstatus">
+      <class name="ru.stqa.pft.statr.tests.testforms.TestFive">
         <methods>
-          <include name="testeditstatus"/>
+          <include name="testStatistics"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.status.TestEditstatus -->
-      <class name="ru.stqa.pft.statr.tests.status.TestDeletestatus">
+      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestFive -->
+      <class name="ru.stqa.pft.statr.tests.TestReportGenerator">
         <methods>
           <include name="setUp"/>
-          <include name="testdeletestatus"/>
           <include name="tearDown"/>
+          <include name="testReportGenerator"/>
         </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.status.TestDeletestatus -->
-      <class name="ru.stqa.pft.statr.tests.testuser.TestDeleteusers">
+      </class> <!-- ru.stqa.pft.statr.tests.TestReportGenerator -->
+      <class name="ru.stqa.pft.statr.tests.testuser.TestUsers">
         <methods>
           <include name="setUp"/>
-          <include name="testdeleteusers"/>
           <include name="tearDown"/>
+          <include name="testUsers"/>
         </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testuser.TestDeleteusers -->
+      </class> <!-- ru.stqa.pft.statr.tests.testuser.TestUsers -->
       <class name="ru.stqa.pft.statr.tests.testforms.TestFifteen">
         <methods>
           <include name="testStatistics"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- ru.stqa.pft.statr.tests.testforms.TestFifteen -->
-      <class name="ru.stqa.pft.statr.tests.usergroup.TestDeleteUserGroup">
-        <methods>
-          <include name="setUp"/>
-          <include name="testdeleteUserGroup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.usergroup.TestDeleteUserGroup -->
-      <class name="ru.stqa.pft.statr.tests.testuser.TestEditusers">
-        <methods>
-          <include name="testeditusers"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testuser.TestEditusers -->
-      <class name="ru.stqa.pft.statr.tests.Reference.znachReference.TestEditznachReference">
-        <methods>
-          <include name="setUp"/>
-          <include name="testReference"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.Reference.znachReference.TestEditznachReference -->
       <class name="ru.stqa.pft.statr.tests.testforms.TestOne">
         <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
           <include name="testStatistics"/>
         </methods>
       </class> <!-- ru.stqa.pft.statr.tests.testforms.TestOne -->
-      <class name="ru.stqa.pft.statr.tests.testforms.TestSeven">
+      <class name="ru.stqa.pft.statr.tests.testforms.TestSix">
         <methods>
-          <include name="testStatistics"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestSeven -->
-      <class name="ru.stqa.pft.statr.tests.Reference.znachReference.TestDeleteznachReference">
-        <methods>
-          <include name="testReference"/>
           <include name="setUp"/>
+          <include name="testStatistics"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.Reference.znachReference.TestDeleteznachReference -->
-      <class name="ru.stqa.pft.statr.tests.status.TestStatus">
+      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestSix -->
+      <class name="ru.stqa.pft.statr.tests.testforms.TestSixteen">
         <methods>
-          <include name="testStatus"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.status.TestStatus -->
-      <class name="ru.stqa.pft.statr.tests.testforms.TestEight">
-        <methods>
-          <include name="testStatistics"/>
           <include name="setUp"/>
+          <include name="testStatistics"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestEight -->
+      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestSixteen -->
       <class name="ru.stqa.pft.statr.tests.testforms.TestEighteen">
         <methods>
           <include name="setUp"/>
           <include name="testStatistics"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- ru.stqa.pft.statr.tests.testforms.TestEighteen -->
-      <class name="ru.stqa.pft.statr.tests.Reference.TestEditReference">
+      <class name="ru.stqa.pft.statr.tests.testforms.TestTwelve">
         <methods>
           <include name="setUp"/>
+          <include name="testStatistics"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.Reference.TestEditReference -->
-      <class name="ru.stqa.pft.statr.tests.testforms.TestFour">
-        <methods>
-          <include name="testStatistics"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestFour -->
-      <class name="ru.stqa.pft.statr.tests.testforms.TestFive">
-        <methods>
-          <include name="testStatistics"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestFive -->
-      <class name="ru.stqa.pft.statr.tests.GenDocument.TestDeleteGenDocument">
-        <methods>
-          <include name="testDeleteGenDocument"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.GenDocument.TestDeleteGenDocument -->
-      <class name="ru.stqa.pft.statr.tests.testuser.TestUsers">
-        <methods>
-          <include name="testUsers"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testuser.TestUsers -->
-      <class name="ru.stqa.pft.statr.tests.testforms.TestSix">
-        <methods>
-          <include name="testStatistics"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestSix -->
-      <class name="ru.stqa.pft.statr.tests.GenDocument.TestEditGenDocument">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="testeditGenDocument"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.GenDocument.TestEditGenDocument -->
-      <class name="ru.stqa.pft.statr.tests.testforms.TestNine">
-        <methods>
-          <include name="testStatistics"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestNine -->
-      <class name="ru.stqa.pft.statr.tests.Reference.TestDeleteReference">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.Reference.TestDeleteReference -->
-      <class name="ru.stqa.pft.statr.tests.testforms.TestEleven">
-        <methods>
-          <include name="testStatistics"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestEleven -->
+      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestTwelve -->
       <class name="ru.stqa.pft.statr.tests.testforms.TestThree">
         <methods>
           <include name="testStatistics"/>
-        </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestThree -->
-      <class name="ru.stqa.pft.statr.tests.usergroup.TestEditUserGroup">
-        <methods>
-          <include name="testeditUserGroup"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.usergroup.TestEditUserGroup -->
-      <class name="ru.stqa.pft.statr.tests.testforms.TestFourteen">
+      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestThree -->
+      <class name="ru.stqa.pft.statr.tests.TestCurrentSituation">
+        <methods>
+          <include name="setUp"/>
+          <include name="testCurrentSituation"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- ru.stqa.pft.statr.tests.TestCurrentSituation -->
+      <class name="ru.stqa.pft.statr.tests.TestLogs">
+        <methods>
+          <include name="setUp"/>
+          <include name="testLogs"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- ru.stqa.pft.statr.tests.TestLogs -->
+      <class name="ru.stqa.pft.statr.tests.status.TestStatus">
+        <methods>
+          <include name="testStatus"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- ru.stqa.pft.statr.tests.status.TestStatus -->
+      <class name="ru.stqa.pft.statr.tests.testforms.TestTen">
         <methods>
           <include name="testStatistics"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestFourteen -->
-      <class name="ru.stqa.pft.statr.tests.testforms.TestTwelve">
+      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestTen -->
+      <class name="ru.stqa.pft.statr.tests.testforms.TestTwo">
         <methods>
+          <include name="setUp"/>
           <include name="testStatistics"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestTwelve -->
-      <class name="ru.stqa.pft.statr.tests.testforms.TestSeventeen">
+      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestTwo -->
+      <class name="ru.stqa.pft.statr.tests.usergroup.TestUserGroup">
         <methods>
-          <include name="testStatistics"/>
+          <include name="setUp"/>
+          <include name="testUserGroup"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- ru.stqa.pft.statr.tests.testforms.TestSeventeen -->
+      </class> <!-- ru.stqa.pft.statr.tests.usergroup.TestUserGroup -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->

@@ -12,13 +12,13 @@ public class TestUsers extends TestBase {
 
         app.goToUsers();
         Thread.sleep(5000);
-//        app.createusers();
-//        Thread.sleep(20000);
-//        app.poiskuser();
+        app.createusers();
+        Thread.sleep(20000);
+        app.poiskuser();
         app.editusers();
         Thread.sleep(2000);
-//        app.deleteusers();
-//        Thread.sleep(20000);
+        app.deleteusers();
+        Thread.sleep(20000);
 
     }
 }

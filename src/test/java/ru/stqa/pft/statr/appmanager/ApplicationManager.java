@@ -73,16 +73,16 @@ public class ApplicationManager {
               wd.manage().timeouts().pageLoadTimeout(2000, TimeUnit.SECONDS);
               wd.manage().timeouts().setScriptTimeout(5000, TimeUnit.SECONDS);
               wd.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
-              wd.get("http://stat5066.mkstat.ru/");
-              //    wd.get("http://192.168.50.45");
+
+                  wd.get("http://192.168.50.45");
          //     Thread.sleep(10000);
-              login("admin", "master");
+        //      login("admin", "master");
               wd.manage().timeouts().pageLoadTimeout(2000, TimeUnit.SECONDS);
               wd.manage().timeouts().setScriptTimeout(5000, TimeUnit.SECONDS);
               wd.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
 
 
-              //       login("selenium", "selenium");
+                     login("admin", "master");
 
           }
 
